@@ -34,33 +34,55 @@ from bge import logic as gl
 
 # Listen every frame
 gl.data = gl.my_receiver.get_data()
+print("===========================")
+print("gl.data")
+print(gl.data)
+print("===========================")
 
 # Get x, y in data OSC message
 if gl.data:
-    if "/t7" in gl.data:
-        gl.z = gl.data[2]
-    if "/f0" in gl.data:
-        gl.f0 = gl.data[2]
-    if "/f1" in gl.data:
+    if "/fall" in gl.data:
         gl.f1 = gl.data[2]
-    if "/f2" in gl.data:
-        gl.f2 = gl.data[2]
-    if "/f3" in gl.data:
-        gl.f3 = gl.data[2]
-    if "/f4" in gl.data:
-        gl.f4 = gl.data[2]
+        gl.f2 = gl.data[3]
+        gl.f3 = gl.data[4]
+        gl.f4 = gl.data[5]
+        gl.f5 = gl.data[6]
+        gl.f6 = gl.data[7]
+        gl.f7 = gl.data[8]
+        gl.f8 = gl.data[9]
+        gl.f9 = gl.data[10]
+        gl.f10 = gl.data[11]
+    
+#    if "/f1" in gl.data:
+#        gl.f1 = gl.data[2]
+#    if "/f2" in gl.data:
+#        gl.f2 = gl.data[2]
+#    if "/f3" in gl.data:
+#        gl.f3 = gl.data[2]
+#    if "/f4" in gl.data:
+#        gl.f4 = gl.data[2]
+#    if "/f5" in gl.data:
+#        gl.f5 = gl.data[2]
+#    if "/f6" in gl.data:
+#        gl.f6 = gl.data[2]
+#    if "/f7" in gl.data:
+#        gl.f7 = gl.data[2]
+#    if "/f8" in gl.data:
+#        gl.f8 = gl.data[2]
+#    if "/f9" in gl.data:
+#        gl.f9 = gl.data[2]
+#    if "/f10" in gl.data:
+#        gl.f10 = gl.data[2]
         
     # Variables de la camara
-    if "/camx" in gl.data:
-        gl.camx = gl.data[2]
-    if "/camy" in gl.data:
-        gl.camy = gl.data[2]
-    if "/camz" in gl.data:
-        gl.camz = gl.data[2]
-    if "/cam" in gl.data:
-        gl.cam = gl.data[2]
-    if "/cam_noise" in gl.data:
-        gl.cam_noise = gl.data[2]
+    #if "/camx" in gl.data:
+    #    gl.camx = gl.data[2]
+    #if "/camy" in gl.data:
+    #    gl.camy = gl.data[2]
+    #if "/camz" in gl.data:
+    #    gl.camz = gl.data[2]
+    #if "/cam" in gl.data:
+    #    gl.cam = gl.data[2]
 
 # 
 controller = gl.getCurrentController()
@@ -78,11 +100,17 @@ scene = gl.getCurrentScene()
 #t6 = scene.objects["t6"]
 #t7 = scene.objects["t7"]
 
-o0 = scene.objects["o0"]
+
 o1 = scene.objects["o1"]
 o2 = scene.objects["o2"]
 o3 = scene.objects["o3"]
 o4 = scene.objects["o4"]
+o5 = scene.objects["o5"]
+o6 = scene.objects["o6"]
+o7 = scene.objects["o7"]
+o8 = scene.objects["o8"]
+o9 = scene.objects["o9"]
+o10 = scene.objects["o10"]
 
 luz = scene.objects["luz"]
 luz2 = scene.objects["luz2"]
@@ -94,31 +122,17 @@ cam_noise_empty = scene.objects["cam_noise_empty"]
 
 
 # Animamos objetos
-o0.localPosition.z = gl.f0
 o1.localPosition.z = gl.f1
 o2.localPosition.z = gl.f2
 o3.localPosition.z = gl.f3
 o4.localPosition.z = gl.f4
+o5.localPosition.z = gl.f5
+o6.localPosition.z = gl.f6
+o7.localPosition.z = gl.f7
+o8.localPosition.z = gl.f8
+o9.localPosition.z = gl.f9
+o10.localPosition.z = gl.f10
 
-luz.energy = gl.z*100
-luz.energy = gl.f2*100
-luz.energy = gl.f3*100
-
-
-t_sonidos.localPosition.z = gl.f0
-
-print("-------")
-print("luz.energy")
-print(luz.energy)
-print("-------")
-
-if luz.energy <= 1.0:
-    luz.energy = 1.0
-
-print("-------")
-print("luz.energy")
-print(luz.energy)
-print("-------")
 #gl.z = gl.z*20
 
 #t7.localPosition.z = gl.z
@@ -129,27 +143,16 @@ print("-------")
 #t2.localPosition.z = gl.z*13
 #t1.localPosition.z = gl.z*21
 
-print("gl.cam: ")
-print(gl.cam)
-
-camara = "cam"+str(gl.cam)
-print(camara)
-
-scene.active_camera = camara
-cam = scene.active_camera
 #cam.localPosition.x = gl.camx
 #cam.localPosition.y = gl.camy
 #cam.localPosition.z = gl.camz
 
-cam_posx = cam.localPosition.x
-cam_posy = cam.localPosition.y
-cam_posz = cam.localPosition.z
+#cam_posx = cam.localPosition.x
+#cam_posy = cam.localPosition.y
+#cam_posz = cam.localPosition.z
 
-print("cam_position")
-print(cam.localPosition)
-
-cam.localPosition = [+gl.camx, +gl.camy, +gl.camz]
-cam_noise_empty.localPosition = [gl.cam_noise, gl.cam_noise, gl.cam_noise]
+#cam.localPosition = [+gl.camx, +gl.camy, +gl.camz]
+#cam_noise_empty.localPosition = [gl.cam_noise, gl.cam_noise, gl.cam_noise]
 
 #for x in scene.objects:
 #    print(x)
