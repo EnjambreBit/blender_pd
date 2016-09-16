@@ -41,17 +41,17 @@ print("===========================")
 
 # Get x, y in data OSC message
 if gl.data:
-    if "/fall" in gl.data:
-        gl.f1 = gl.data[2]
-        gl.f2 = gl.data[3]
-        gl.f3 = gl.data[4]
-        gl.f4 = gl.data[5]
-        gl.f5 = gl.data[6]
-        gl.f6 = gl.data[7]
-        gl.f7 = gl.data[8]
-        gl.f8 = gl.data[9]
-        gl.f9 = gl.data[10]
-        gl.f10 = gl.data[11]
+    if "/n" in gl.data:
+        gl.n1 = gl.data[2]
+        gl.n2 = gl.data[3]
+        gl.n3 = gl.data[4]
+        gl.n4 = gl.data[5]
+        gl.n5 = gl.data[6]
+        gl.n6 = gl.data[7]
+        gl.n7 = gl.data[8]
+        gl.n8 = gl.data[9]
+        gl.n9 = gl.data[10]
+        gl.n10 = gl.data[11]
     
 #    if "/f1" in gl.data:
 #        gl.f1 = gl.data[2]
@@ -101,37 +101,32 @@ scene = gl.getCurrentScene()
 #t7 = scene.objects["t7"]
 
 
-o1 = scene.objects["o1"]
-o2 = scene.objects["o2"]
-o3 = scene.objects["o3"]
-o4 = scene.objects["o4"]
-o5 = scene.objects["o5"]
-o6 = scene.objects["o6"]
-o7 = scene.objects["o7"]
-o8 = scene.objects["o8"]
-o9 = scene.objects["o9"]
-o10 = scene.objects["o10"]
+n1 = scene.objects["n1"]
+n2 = scene.objects["n2"]
+n3 = scene.objects["n3"]
+n4 = scene.objects["n4"]
+n5 = scene.objects["n5"]
+n6 = scene.objects["n6"]
+n7 = scene.objects["n7"]
+n8 = scene.objects["n8"]
+n9 = scene.objects["n9"]
+n10 = scene.objects["n10"]
 
 luz = scene.objects["luz"]
 luz2 = scene.objects["luz2"]
 luz3 = scene.objects["luz3"]
 
-t_sonidos = scene.objects["t_sonidos"]
-
-cam_noise_empty = scene.objects["cam_noise_empty"]
-
-
 # Animamos objetos
-o1.localPosition.z = gl.f1
-o2.localPosition.z = gl.f2
-o3.localPosition.z = gl.f3
-o4.localPosition.z = gl.f4
-o5.localPosition.z = gl.f5
-o6.localPosition.z = gl.f6
-o7.localPosition.z = gl.f7
-o8.localPosition.z = gl.f8
-o9.localPosition.z = gl.f9
-o10.localPosition.z = gl.f10
+n1.localPosition.z = gl.n1
+n2.localPosition.z = gl.n2
+n3.localPosition.z = gl.n3
+n4.localPosition.z = gl.n4
+n5.localPosition.z = gl.n5
+n6.localPosition.z = gl.n6
+n7.localPosition.z = gl.n7
+n8.localPosition.z = gl.n8
+n9.localPosition.z = gl.n9
+n10.localPosition.z = gl.n10
 
 #gl.z = gl.z*20
 

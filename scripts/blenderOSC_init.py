@@ -46,6 +46,17 @@ gl.buffer_size = 4096
 gl.x, gl.y, gl.z = 0, -3.3, 1.14
 gl.camx, gl.camy, gl.camz = 0, 0, 0
 
+gl.n1 = 0
+gl.n2 = 0
+gl.n3 = 0
+gl.n4 = 0
+gl.n5 = 0
+gl.n6 = 0
+gl.n7 = 0
+gl.n8 = 0
+gl.n9 = 0
+gl.n10 = 0
+
 # Listener python object
 gl.my_receiver = Receive(gl.ip_in, gl.port_in, gl.buffer_size, verbose=True)
 
