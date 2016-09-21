@@ -67,6 +67,7 @@ scene = gl.getCurrentScene()
 
 # Obtenemos los objetos de la escena
 luz1 = scene.objects["luz1"]
+tunel1 = scene.objetcs["tunel1"]
 
 
 # Animamos objetos
