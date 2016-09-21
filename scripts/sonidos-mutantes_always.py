@@ -67,11 +67,27 @@ scene = gl.getCurrentScene()
 
 # Obtenemos los objetos de la escena
 luz1 = scene.objects["luz1"]
-tunel1 = scene.objetcs["tunel1"]
+tunel1 = scene.objects["tunel1"]
+tunel_ventanas1 = scene.objects["tunel_ventanas1"]
+logo_enjambre = scene.objects["logo_enjambre"]
 
+# Random colors from gl.data
+gl.all = [gl.n1,gl.n2,gl.n3,gl.n4,gl.n5,gl.n6,gl.n7,gl.n8,gl.n9,gl.n10]
+rand_red = random.choice(gl.all)
+rand_green = random.choice(gl.all)
+rand_blue = random.choice(gl.all)
 
 # Animamos objetos
 luz1.localPosition = [gl.n1, gl.n6, gl.n10]
+
+tunel_ventanas1.color = [rand_red, 0.0, 0.0, 1.0]
+
+#logo_enjambre.localScale = [rand_red, rand_green, rand_blue]
+logo_enjambre.color = [rand_red, rand_green, rand_blue, 1.0]
+
+print("---------")
+print(tunel_ventanas1.color)
+print("---------")
 
 
 #for x in scene.objects:
