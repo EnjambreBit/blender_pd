@@ -1,4 +1,4 @@
-#N canvas 483 57 956 840 12;
+#N canvas 0 76 1600 824 12;
 #X declare -lib mrpeach;
 #X msg 221 253 disconnect;
 #X text 1204 -395 Receive example;
@@ -18,7 +18,7 @@
 #X obj 1210 -358 udpreceive 8000;
 #X msg 12 222 connect localhost 9000;
 #X obj 786 -539 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array curva 100 float 3;
 #A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
