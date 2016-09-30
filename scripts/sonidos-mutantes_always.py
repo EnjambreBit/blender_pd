@@ -108,14 +108,23 @@ rand_green = random.choice(gl.all)
 rand_blue = random.choice(gl.all)
 
 # Limitamos variables de posicion para mantenerlas dentro del domo
-ln1 = clamp(gl.n1, -8, 8)
-ln6 = clamp(gl.n6, -8, 8)
-ln10 = clamp(gl.n10, -8, 8)
+ln1 = clamp(gl.n1, -12, 12)
+ln2 = clamp(gl.n2, -12, 12)
+ln3 = clamp(gl.n3, -12, 12)
+ln5 = clamp(gl.n5, -12, 12)
+ln6 = clamp(gl.n6, -12, 12)
+ln7 = clamp(gl.n7, -12, 12)
+ln9 = clamp(gl.n9, -12, 12)
+ln10 = clamp(gl.n9, -12, 12)
+ln11 = clamp(gl.n10, -12, 12)
 
 # Animamos objetos
 luz1.localPosition.z = ln1
-luz2.localPosition.z = ln6
-luz3.localPosition.z = ln10
+luz1.localPosition.x = ln3
+luz2.localPosition.z = ln5
+luz2.localPosition.x = ln7
+luz3.localPosition.z = ln9
+luz3.localPosition.x = ln11
 
 #Escenario tunel
 # Limitamos variables
@@ -164,15 +173,6 @@ luz_tunel5.localPosition.y = 160 + tl5
 luz_tunel7.localPosition.y = 123.74 + tl7
 luz_tunel9.localPosition.y = 71.37 + tl9
 luz_tunel11.localPosition.y = 140.3 + tl10
-
-
-#logo_enjambre.localScale = [rand_red, rand_green, rand_blue]
-logo_enjambre.color = [rand_red, rand_green, rand_blue, 1.0]
-
-print("---------")
-print(tunel_ventanas1.color)
-print("---------")
-
 
 #for x in scene.objects:
 #    print(x)
