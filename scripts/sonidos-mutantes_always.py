@@ -29,7 +29,7 @@
 '''
 This script run at all frame.
 '''
-
+import math
 import random
 import bge
 from bge import logic as gl
@@ -85,8 +85,17 @@ scene = gl.getCurrentScene()
 luz1 = scene.objects["luz1"]
 luz2 = scene.objects["luz2"]
 luz3 = scene.objects["luz3"]
+
+luz_tunel1 = scene.objects["luz_tunel1"]
+luz_tunel3 = scene.objects["luz_tunel3"]
+luz_tunel5 = scene.objects["luz_tunel5"]
+luz_tunel7 = scene.objects["luz_tunel7"]
+luz_tunel9 = scene.objects["luz_tunel9"]
+luz_tunel11 = scene.objects["luz_tunel11"]
+
+
+
 tunel1 = scene.objects["tunel1"]
-tunel_ventanas1 = scene.objects["tunel_ventanas1"]
 logo_enjambre = scene.objects["logo_enjambre"]
 
 # "Escenarios"
@@ -108,7 +117,54 @@ luz1.localPosition.z = ln1
 luz2.localPosition.z = ln6
 luz3.localPosition.z = ln10
 
-tunel_ventanas1.color = [rand_red, 0.0, 0.0, 1.0]
+#Escenario tunel
+# Limitamos variables
+tl1 = clamp(gl.n1, -10, 10)
+tl3 = clamp(gl.n3, -10, 10)
+tl5 = clamp(gl.n5, -10, 10)
+tl7 = clamp(gl.n7, -10, 10)
+tl9 = clamp(gl.n9, -10, 10)
+tl10 = clamp(gl.n10, -10, 10)
+
+#animacion luces tunel
+
+lt1_rot_xyz = luz_tunel1.localOrientation.to_euler()
+lt1_rot_xyz[0] = math.radians(gl.n1)
+lt1_rot_xyz[1] = math.radians(gl.n2)
+luz_tunel1.localOrientation = lt1_rot_xyz.to_matrix() 
+
+lt3_rot_xyz = luz_tunel3.localOrientation.to_euler()
+lt3_rot_xyz[0] = math.radians(gl.n3)
+lt3_rot_xyz[1] = math.radians(gl.n4)
+luz_tunel3.localOrientation = lt3_rot_xyz.to_matrix() 
+
+lt5_rot_xyz = luz_tunel5.localOrientation.to_euler()
+lt5_rot_xyz[0] = math.radians(gl.n5)
+lt5_rot_xyz[1] = math.radians(gl.n6)
+luz_tunel5.localOrientation = lt5_rot_xyz.to_matrix() 
+
+lt7_rot_xyz = luz_tunel7.localOrientation.to_euler()
+lt7_rot_xyz[0] = math.radians(gl.n7)
+lt7_rot_xyz[0] = math.radians(gl.n8)
+luz_tunel7.localOrientation = lt7_rot_xyz.to_matrix() 
+
+lt9_rot_xyz = luz_tunel9.localOrientation.to_euler()
+lt9_rot_xyz[0] = math.radians(gl.n9)
+lt9_rot_xyz[0] = math.radians(gl.n10)
+luz_tunel9.localOrientation = lt9_rot_xyz.to_matrix() 
+
+lt11_rot_xyz = luz_tunel11.localOrientation.to_euler()
+lt11_rot_xyz[0] = math.radians(gl.n1)
+lt11_rot_xyz[0] = math.radians(gl.n10)
+luz_tunel11.localOrientation = lt11_rot_xyz.to_matrix() 
+
+luz_tunel1.localPosition.y = 9.76 + tl1
+luz_tunel3.localPosition.y = 100.25 + tl3
+luz_tunel5.localPosition.y = 160 + tl5
+luz_tunel7.localPosition.y = 123.74 + tl7
+luz_tunel9.localPosition.y = 71.37 + tl9
+luz_tunel11.localPosition.y = 140.3 + tl10
+
 
 #logo_enjambre.localScale = [rand_red, rand_green, rand_blue]
 logo_enjambre.color = [rand_red, rand_green, rand_blue, 1.0]
