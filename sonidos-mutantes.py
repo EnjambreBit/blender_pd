@@ -27,4 +27,4 @@ import subprocess
 
 subprocess.Popen('pd-extended ./enjambre-sonidos-mutantes.pd', shell=True)
 
-subprocess.Popen('blender ./sonidos-mutantes_v01.blend', shell=True)
+subprocess.Popen('blender ./sonidos-mutantes_v02.blend', shell=True)
