@@ -1,11 +1,11 @@
-#N canvas 2 52 1351 708 12;
+#N canvas 1920 49 1920 996 12;
 #X declare -lib mrpeach;
 #X msg 221 253 disconnect;
 #X text 1449 41 Receive example;
 #X obj 25 161 import mrpeach;
 #X obj 196 159 packOSC;
 #X obj 196 299 udpsend;
-#X obj 196 341 tgl 15 0 empty empty empty 8 -8 0 10 -4034 -1 -1 1 1
+#X obj 196 341 tgl 15 0 empty empty empty 8 -8 0 10 -4034 -1 -1 0 1
 ;
 #X obj 1424 222 cnv 15 200 40 empty empty empty 20 12 0 14 -4034 -66577
 0;

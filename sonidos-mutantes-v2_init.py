@@ -45,7 +45,7 @@ gl.port_out = 8000
 gl.buffer_size = 4096
 
 # Default positions
-
+i = 0
 
 # Listener python object
 gl.my_receiver = Receive(gl.ip_in, gl.port_in, gl.buffer_size, verbose=True)

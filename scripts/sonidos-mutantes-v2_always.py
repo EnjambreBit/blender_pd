@@ -47,10 +47,10 @@ def clamp(n, minn, maxn):
 gl.data = gl.my_receiver.get_data()
 
 # Imprime gl.data para debug
-print("===========================")
-print("gl.data")
-print(gl.data)
-print("===========================")
+#print("===========================")
+#print("gl.data")
+#print(gl.data)
+#print("===========================")
 
 # Get x, y in data OSC message
 if gl.data:
@@ -113,14 +113,25 @@ li12 = clamp(gl.n12, 0, 1.75)
 li13 = clamp(gl.n13, 0, 1.75)
 li14 = clamp(gl.n14, 0, 2)
 li15 = clamp(gl.n15, 0, 2)
-li16 = clamp(gl.n15, 0, 2)
-li17 = clamp(gl.n15, 0, 2)
-li18 = clamp(gl.n15, 0, 2)
+li16 = clamp(gl.n16, 0, 2)
+li17 = clamp(gl.n17, 0, 2)
+li18 = clamp(gl.n18, 0, 2)
 
 liAll = [li1,li2,li3,li4,li5,li6,li7,li8,li9,li10,li11,li12,li13,li14,li15,li16,li17,li18]
 
 
 # Obtenemos los objetos de la escena
+
+# Acto 0 - La espera
+pl1 = scene.objects["pl1"]
+
+ico1 = scene.objects["ico1"]
+
+# Animacion Icoesferas Mutantes
+ico1.localPosition = [gl.n1, gl.n2, 0]
+#ico1.localScale = [gl.n5, gl.n15, gl.n5] ## Se agranda enorme y garpa mucho
+ico1.localScale = [clamp(gl.n5, 2.5, 5), clamp(gl.n5, 2.5, 5), clamp(gl.n5, 2.5, 5)]
+
 # Acto 1 - Ciudad Mutante
 e1_l1 = scene.objects["e1_l1"]
 e1_l2 = scene.objects["e1_l2"]
