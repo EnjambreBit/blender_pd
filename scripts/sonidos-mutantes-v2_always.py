@@ -22,7 +22,7 @@
 #  along with this program; if not, write to the Free Software Foundation,
 #  Inc., 51 Franproplin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #
-#############################################################################
+####################################################n#########################
 
 
 
@@ -82,6 +82,8 @@ scene = gl.getCurrentScene()
 #    print(x)
 #    print("___________")
 
+
+
 # Random colors from gl.data
 gl.all = [gl.n1,gl.n2,gl.n3,gl.n4,gl.n5,gl.n6,gl.n7,gl.n8,gl.n9,gl.n10,gl.n11,gl.n12,gl.n13,gl.n14,gl.n15]
 rand_red = random.choice(gl.all)
@@ -98,31 +100,32 @@ brillance = [gl.n13,gl.n14,gl.n15,gl.n16,gl.n17,gl.n18] # 6, 8, 10, 12, 14, 15 k
 
 
 # Limitamos variables para intensidad de luces
-li1 = clamp(gl.n1, 0, 1.0)
-li2 = clamp(gl.n2, 0, 1.0)
-li3 = clamp(gl.n3, 0, 1.0)
-li4 = clamp(gl.n4, 0, 1.25)
-li5 = clamp(gl.n5, 0, 1.25)
-li6 = clamp(gl.n6, 0, 1.25)
-li7 = clamp(gl.n7, 0, 1.5)
-li8 = clamp(gl.n8, 0, 1.5)
-li9 = clamp(gl.n9, 0, 1.5)
-li10 = clamp(gl.n10, 0, 1.75)
-li11 = clamp(gl.n11, 0, 1.75)
-li12 = clamp(gl.n12, 0, 1.75)
-li13 = clamp(gl.n13, 0, 1.75)
-li14 = clamp(gl.n14, 0, 2)
-li15 = clamp(gl.n15, 0, 2)
-li16 = clamp(gl.n16, 0, 2)
-li17 = clamp(gl.n17, 0, 2)
-li18 = clamp(gl.n18, 0, 2)
+li1 = clamp(gl.n1, 0, 3.0)
+li2 = clamp(gl.n2, 0, 3.0)
+li3 = clamp(gl.n3, 0, 3.0)
+li4 = clamp(gl.n4, 0, 3.25)
+li5 = clamp(gl.n5, 0, 3.25)
+li6 = clamp(gl.n6, 0, 3.25)
+li7 = clamp(gl.n7, 0, 4.5)
+li8 = clamp(gl.n8, 0, 4.5)
+li9 = clamp(gl.n9, 0, 4.5)
+li10 = clamp(gl.n10, 0, 5.75)
+li11 = clamp(gl.n11, 0, 5.75)
+li12 = clamp(gl.n12, 0, 5.75)
+li13 = clamp(gl.n13, 0, 5.75)
+li14 = clamp(gl.n14, 0, 6)
+li15 = clamp(gl.n15, 0, 6)
+li16 = clamp(gl.n16, 0, 6)
+li17 = clamp(gl.n17, 0, 6)
+li18 = clamp(gl.n18, 0, 6)
 
 liAll = [li1,li2,li3,li4,li5,li6,li7,li8,li9,li10,li11,li12,li13,li14,li15,li16,li17,li18]
 
 
 # Obtenemos los objetos de la escena
 
-# Acto 0 - La espera
+######################### La Espera ##########################
+
 pl1 = scene.objects["pl1"]
 ico1 = scene.objects["ico1"]
 pl2 = scene.objects["pl2"]
@@ -133,19 +136,27 @@ pl4 = scene.objects["pl4"]
 ico4 = scene.objects["ico4"]
 pl5 = scene.objects["pl5"]
 ico5 = scene.objects["ico5"]
+pl6 = scene.objects["pl6"]
+ico6 = scene.objects["ico6"]
+pl7 = scene.objects["pl7"]
+ico7 = scene.objects["ico7"]
 
 # Animacion Icoesferas Mutantes
 ico1.localPosition = [gl.n1-38.42, gl.n2-29.62, 0]
 ico2.localPosition = [gl.n5-12.25, gl.n6-40.19, 0]
 ico3.localPosition = [gl.n9-19.95, gl.n10-17.79, 0]
 ico4.localPosition = [gl.n14+8.30, gl.n16-32.11, 0]
+ico6.localPosition = [gl.n3-19.10, gl.n4-28.19, 0]
+ico7.localPosition = [gl.n17-4.10, gl.n18-27.20, 0]
 
 pl5.energy = float(random.choice(liAll*10))
 
 #ico1.localScale = [gl.n5, gl.n15, gl.n5] ## Si el origen esta en el centro, se agranda enorme y garpa mucho
 #ico1.localScale = [clamp(gl.n5, 2.5, 5), clamp(gl.n5, 2.5, 5), clamp(gl.n5, 2.5, 5)]
 
-# Acto 1 - Ciudad Mutante
+
+######################### Ciudad Mutante ##########################
+# Luces edificios
 e1_l1 = scene.objects["e1_l1"]
 e1_l2 = scene.objects["e1_l2"]
 e1_l3 = scene.objects["e1_l3"]
@@ -162,7 +173,21 @@ e1_l13 = scene.objects["e1_l13"]
 e1_l14 = scene.objects["e1_l14"]
 e1_l15 = scene.objects["e1_l15"]
 
+# Icoesferas mini
+sm_ico1 = scene.objects["sm_ico1"]
+sm_ico2 = scene.objects["sm_ico2"]
+
 #Animacion Luces
+sm_gl9 = clamp(gl.n9, -1, 1)
+sm_gl10 = clamp(gl.n10, -1.3, 1.3)
+
+sm_gl16 = clamp(gl.n16, -0.5, 0.5)
+sm_gl17 = clamp(gl.n17, -0.5, 0.5)
+sm_gl18 = clamp(gl.n18, -0.5, 0.5)
+
+
+sm_ico1.localPosition = [sm_gl9+1.99, sm_gl10+0.26, 0.176]
+sm_ico2.localPosition = [sm_gl16-0.355, sm_gl17+1.393, sm_gl18+0.538]
 
 #e1_l1.energy = random.choice(gl.all)
 
@@ -196,6 +221,12 @@ e1_l3.energy = float(li13)
 e1_l7.energy = float(li16)
 e1_l13.energy = float(li17)
 e1_l11.energy = float(li18)
+
+######################### La CUEVA ##########################
+# Objetos
+pl_cave_1 = scene.objects["pl_cave_1"]
+
+# Animaciones La Cueva
 
 # Send
 res = 30*random.random() - 15  # from 15 to 15gl.my_sender.simple_send_to("/blender/x", res, (gl.ip_out, gl.port_out))
