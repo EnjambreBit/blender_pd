@@ -1,4 +1,4 @@
-#N canvas 0 92 1366 676 12;
+#N canvas 2 91 1351 676 12;
 #X declare -lib mrpeach;
 #X msg 221 253 disconnect;
 #X text 1449 41 Receive example;

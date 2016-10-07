@@ -124,13 +124,26 @@ liAll = [li1,li2,li3,li4,li5,li6,li7,li8,li9,li10,li11,li12,li13,li14,li15,li16,
 
 # Acto 0 - La espera
 pl1 = scene.objects["pl1"]
-
 ico1 = scene.objects["ico1"]
+pl2 = scene.objects["pl2"]
+ico2 = scene.objects["ico2"]
+pl3 = scene.objects["pl3"]
+ico3 = scene.objects["ico3"]
+pl4 = scene.objects["pl4"]
+ico4 = scene.objects["ico4"]
+pl5 = scene.objects["pl5"]
+ico5 = scene.objects["ico5"]
 
 # Animacion Icoesferas Mutantes
-ico1.localPosition = [gl.n1, gl.n2, 0]
-#ico1.localScale = [gl.n5, gl.n15, gl.n5] ## Se agranda enorme y garpa mucho
-ico1.localScale = [clamp(gl.n5, 2.5, 5), clamp(gl.n5, 2.5, 5), clamp(gl.n5, 2.5, 5)]
+ico1.localPosition = [gl.n1-38.42, gl.n2-29.62, 0]
+ico2.localPosition = [gl.n5-12.25, gl.n6-40.19, 0]
+ico3.localPosition = [gl.n9-19.95, gl.n10-17.79, 0]
+ico4.localPosition = [gl.n14+8.30, gl.n16-32.11, 0]
+
+pl5.energy = float(random.choice(liAll*10))
+
+#ico1.localScale = [gl.n5, gl.n15, gl.n5] ## Si el origen esta en el centro, se agranda enorme y garpa mucho
+#ico1.localScale = [clamp(gl.n5, 2.5, 5), clamp(gl.n5, 2.5, 5), clamp(gl.n5, 2.5, 5)]
 
 # Acto 1 - Ciudad Mutante
 e1_l1 = scene.objects["e1_l1"]
