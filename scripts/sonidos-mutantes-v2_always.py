@@ -140,14 +140,23 @@ pl6 = scene.objects["pl6"]
 ico6 = scene.objects["ico6"]
 pl7 = scene.objects["pl7"]
 ico7 = scene.objects["ico7"]
+pl8 = scene.objects["pl8"]
+ico8 = scene.objects["ico8"]
+pl9 = scene.objects["pl9"]
+ico9 = scene.objects["ico9"]
+pl10 = scene.objects["pl10"]
+ico10 = scene.objects["ico10"]
 
 # Animacion Icoesferas Mutantes
 ico1.localPosition = [gl.n1-38.42, gl.n2-29.62, 0]
-ico2.localPosition = [gl.n5-12.25, gl.n6-40.19, 0]
-ico3.localPosition = [gl.n9-19.95, gl.n10-17.79, 0]
-ico4.localPosition = [gl.n14+8.30, gl.n16-32.11, 0]
-ico6.localPosition = [gl.n3-19.10, gl.n4-28.19, 0]
-ico7.localPosition = [gl.n17-4.10, gl.n18-27.20, 0]
+ico2.localPosition = [gl.n3-12.25, gl.n4-40.19, 0]
+ico3.localPosition = [gl.n5-19.95, gl.n6-17.79, 0]
+ico4.localPosition = [gl.n7+8.30, gl.n8-32.11, 0]
+ico6.localPosition = [gl.n9-19.10, gl.n10-28.19, 0]
+ico7.localPosition = [gl.n11-4.10, gl.n12-27.20, 0]
+ico8.localPosition = [gl.n13+20.75, gl.n14-20.71, 0]
+ico9.localPosition = [gl.n15+7.47, gl.n16-52.05, 0]
+ico10.localPosition = [gl.n17-4.10, gl.n18-27.20, 0]
 
 pl5.energy = float(random.choice(liAll*10))
 
@@ -224,9 +233,48 @@ e1_l11.energy = float(li18)
 
 ######################### La CUEVA ##########################
 # Objetos
-pl_cave_1 = scene.objects["pl_cave_1"]
+ico_tunel1 = scene.objects["ico_tunel1"]
+ico_tunel2 = scene.objects["ico_tunel2"]
+ico_tunel3 = scene.objects["ico_tunel3"]
+ico_tunel4 = scene.objects["ico_tunel4"]
+ico_tunel5 = scene.objects["ico_tunel5"]
+ico_tunel6 = scene.objects["ico_tunel6"]
+ico_tunel7 = scene.objects["ico_tunel7"]
+ico_tunel8 = scene.objects["ico_tunel8"]
+ico_tunel9 = scene.objects["ico_tunel9"]
+ico_tunel10 = scene.objects["ico_tunel10"]
+ico_tunel11 = scene.objects["ico_tunel11"]
+ico_tunel12 = scene.objects["ico_tunel12"]
+
+# variables
+it1 = clamp(gl.n1, -3, 3)
+it2 = clamp(gl.n2, -5, 5)
+it3 = clamp(gl.n3, -6.5, 6.5)
+it4 = clamp(gl.n4, -8, 8)
+it5 = clamp(gl.n5, -9.5, 9.5)
+it6 = clamp(gl.n6, -11, 11)
+it7 = clamp(gl.n7, -12.5, 12.5)
+it8 = clamp(gl.n8, -14, 14)
+it9 = clamp(gl.n9, -15.5, 15.5)
+it10 = clamp(gl.n10, -17, 17)
+it11 = clamp(gl.n11, -18.5, 18.5)
+it12 = clamp(gl.n12, -20, 20)
+
 
 # Animaciones La Cueva
+ico_tunel1.localPosition = [it1-3.00, 44.08, -3.39]
+ico_tunel2.localPosition = [it2-3.00, 49.33, -5.46]
+ico_tunel3.localPosition = [it3-3.00, 58.36, -9.01]
+ico_tunel4.localPosition = [it4-3.00, 67.37, -12.45]
+ico_tunel5.localPosition = [it5-3.00, 76.45, -16.02]
+ico_tunel6.localPosition = [it6-3.00, 85.48, -19.57]
+ico_tunel7.localPosition = [it7-3.00, 94.54, -23.05]
+ico_tunel8.localPosition = [it8-3.00, 103.62, -26.62]
+ico_tunel9.localPosition = [it9-3.00, 112.65, -30.17]
+ico_tunel10.localPosition = [it10-3.00, 121.66, -33.62]
+ico_tunel11.localPosition = [it11-3.00, 130.74, -37.18]
+ico_tunel12.localPosition = [it12-3.00, 139.77, -40.73]
+
 
 # Send
 res = 30*random.random() - 15  # from 15 to 15gl.my_sender.simple_send_to("/blender/x", res, (gl.ip_out, gl.port_out))
