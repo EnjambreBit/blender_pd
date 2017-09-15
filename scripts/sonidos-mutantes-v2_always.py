@@ -34,7 +34,6 @@ import random
 import bge
 from bge import logic as gl
 
-
 def clamp(n, minn, maxn):
     if n < minn:
         return minn
@@ -51,6 +50,28 @@ gl.data = gl.my_receiver.get_data()
 #print("gl.data")
 #print(gl.data)
 #print("===========================")
+
+gl.n1 = 0
+gl.n2 = 0
+gl.n3 = 0
+gl.n4 = 0
+gl.n5 = 0
+gl.n6 = 0
+gl.n7 = 0
+gl.n8 = 0
+gl.n9 = 0
+gl.n10 = 0
+gl.n11 = 0
+gl.n12 = 0
+gl.n13 = 0
+gl.n14 = 0
+gl.n15 = 0
+gl.n16 = 0
+gl.n17 = 0
+gl.n18 = 0
+gl.ax = 0
+gl.ay = 0
+gl.az = 0
 
 # Get x, y in data OSC message
 if gl.data:
@@ -74,6 +95,13 @@ if gl.data:
         gl.n16 = round(gl.data[17], 2)
         gl.n17 = round(gl.data[18], 2)
         gl.n18 = round(gl.data[19], 2)
+
+    if "/accelerometer" in gl.data:
+        gl.ax = round(gl.data[2], 2)
+        gl.ay = round(gl.data[3], 2)
+        gl.az = round(gl.data[4], 2)
+
+
 
 # Obtenemos la escena actual
 scene = gl.getCurrentScene()
@@ -124,6 +152,18 @@ liAll = [li1,li2,li3,li4,li5,li6,li7,li8,li9,li10,li11,li12,li13,li14,li15,li16,
 
 # Obtenemos los objetos de la escena
 
+
+#controller = gl.getCurrentController()
+#owner = controller.owner
+owner = scene.objects["cam_main"]
+#owner.localPosition = [gl.x/5, gl.y/5, gl.z/5]
+
+#ow_rot_xyz = owner.localOrientation.to_euler()
+#ow_rot_xyz[0] = math.radians(gl.x)
+#ow_rot_xyz[1] = math.radians(gl.y)
+#ow_rot_xyz[2] = math.radians(gl.z)
+#owner.localOrientation = ow_rot_xyz.to_matrix()
+
 ######################### La Espera ##########################
 
 pl1 = scene.objects["pl1"]
@@ -147,8 +187,10 @@ ico9 = scene.objects["ico9"]
 pl10 = scene.objects["pl10"]
 ico10 = scene.objects["ico10"]
 
+print(ow_rot_xyz[2])
+
 # Animacion Icoesferas Mutantes
-ico1.localPosition = [gl.n1-38.42, gl.n2-29.62, 0]
+ico1.localPosition = [gl.n1-38.42, gl.n2-29.62, gl.az*10]
 ico2.localPosition = [gl.n3-12.25, gl.n4-40.19, 0]
 ico3.localPosition = [gl.n5-19.95, gl.n6-17.79, 0]
 ico4.localPosition = [gl.n7+8.30, gl.n8-32.11, 0]
@@ -156,7 +198,7 @@ ico6.localPosition = [gl.n9-19.10, gl.n10-28.19, 0]
 ico7.localPosition = [gl.n11-4.10, gl.n12-27.20, 0]
 ico8.localPosition = [gl.n13+20.75, gl.n14-20.71, 0]
 ico9.localPosition = [gl.n15+7.47, gl.n16-52.05, 0]
-ico10.localPosition = [gl.n17-4.10, gl.n18-27.20, 0]
+ico10.localPosition = [gl.n17-33.24, gl.n18-10.63, 0]
 
 pl5.energy = float(random.choice(liAll*10))
 
@@ -248,17 +290,17 @@ ico_tunel12 = scene.objects["ico_tunel12"]
 
 # variables
 it1 = clamp(gl.n1, -3, 3)
-it2 = clamp(gl.n2, -5, 5)
-it3 = clamp(gl.n3, -6.5, 6.5)
-it4 = clamp(gl.n4, -8, 8)
-it5 = clamp(gl.n5, -9.5, 9.5)
-it6 = clamp(gl.n6, -11, 11)
-it7 = clamp(gl.n7, -12.5, 12.5)
-it8 = clamp(gl.n8, -14, 14)
-it9 = clamp(gl.n9, -15.5, 15.5)
-it10 = clamp(gl.n10, -17, 17)
-it11 = clamp(gl.n11, -18.5, 18.5)
-it12 = clamp(gl.n12, -20, 20)
+it2 = clamp(gl.n3, -5, 5)
+it3 = clamp(gl.n5, -6.5, 6.5)
+it4 = clamp(gl.n7, -8, 8)
+it5 = clamp(gl.n9, -9.5, 9.5)
+it6 = clamp(gl.n11, -11, 11)
+it7 = clamp(gl.n12, -12.5, 12.5)
+it8 = clamp(gl.n10, -14, 14)
+it9 = clamp(gl.n8, -15.5, 15.5)
+it10 = clamp(gl.n6, -17, 17)
+it11 = clamp(gl.n4, -18.5, 18.5)
+it12 = clamp(gl.n2, -20, 20)
 
 
 # Animaciones La Cueva

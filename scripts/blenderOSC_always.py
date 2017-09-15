@@ -28,6 +28,7 @@
 This script run at all frame.
 '''
 
+import math
 import random
 import bge
 from bge import logic as gl
@@ -41,125 +42,41 @@ print("===========================")
 
 # Get x, y in data OSC message
 if gl.data:
-    if "/n" in gl.data:
-        gl.n1 = gl.data[2]
-        gl.n2 = gl.data[3]
-        gl.n3 = gl.data[4]
-        gl.n4 = gl.data[5]
-        gl.n5 = gl.data[6]
-        gl.n6 = gl.data[7]
-        gl.n7 = gl.data[8]
-        gl.n8 = gl.data[9]
-        gl.n9 = gl.data[10]
-        gl.n10 = gl.data[11]
-    
-#    if "/f1" in gl.data:
-#        gl.f1 = gl.data[2]
-#    if "/f2" in gl.data:
-#        gl.f2 = gl.data[2]
-#    if "/f3" in gl.data:
-#        gl.f3 = gl.data[2]
-#    if "/f4" in gl.data:
-#        gl.f4 = gl.data[2]
-#    if "/f5" in gl.data:
-#        gl.f5 = gl.data[2]
-#    if "/f6" in gl.data:
-#        gl.f6 = gl.data[2]
-#    if "/f7" in gl.data:
-#        gl.f7 = gl.data[2]
-#    if "/f8" in gl.data:
-#        gl.f8 = gl.data[2]
-#    if "/f9" in gl.data:
-#        gl.f9 = gl.data[2]
-#    if "/f10" in gl.data:
-#        gl.f10 = gl.data[2]
-        
-    # Variables de la camara
-    #if "/camx" in gl.data:
-    #    gl.camx = gl.data[2]
-    #if "/camy" in gl.data:
-    #    gl.camy = gl.data[2]
-    #if "/camz" in gl.data:
-    #    gl.camz = gl.data[2]
-    #if "/cam" in gl.data:
-    #    gl.cam = gl.data[2]
+    if "/accelerometer" in gl.data:
+        gl.x = gl.data[2]
+        gl.y = gl.data[3]
+        gl.z = gl.data[4]
 
-# 
+    if "/multi/2" in gl.data:
+        gl.mt2_x = round(gl.data[2], 2)
+        gl.mt2_y = round(gl.data[3], 2)
+        
+    if "/multi/5" in gl.data:
+        gl.mt5_x = round(gl.data[2], 2)
+        gl.mt5_y = round(gl.data[3], 2)
+
 controller = gl.getCurrentController()
-#owner = controller.owner
-#owner.localPosition = [0.3*gl.x, 0.3*gl.y, 2*gl.z]
+owner = controller.owner
+#owner.localPosition = [gl.x/5, gl.y/5, gl.z/5]
+
+#ow_rot_xyz = owner.localOrientation.to_euler()
+#ow_rot_xyz[0] = math.radians(gl.x)
+#ow_rot_xyz[1] = math.radians(gl.y)
+#ow_rot_xyz[2] = math.radians(gl.z)
+#owner.localOrientation = ow_rot_xyz.to_matrix()
 
 # Obtenemos los objetos de la escena
 scene = gl.getCurrentScene()
 #cubo = scene.objects["Cube"]
-#t1 = scene.objects["t1"]
-#t2 = scene.objects["t2"]
-#t3 = scene.objects["t3"]
-#t4 = scene.objects["t4"]
-#t5 = scene.objects["t5"]
-#t6 = scene.objects["t6"]
-#t7 = scene.objects["t7"]
 
+newX = (gl.mt5_x * 5)
+newY = -(gl.mt5_y * 5)
+newZ = (gl.mt2_x * 2)
 
-n1 = scene.objects["n1"]
-n2 = scene.objects["n2"]
-n3 = scene.objects["n3"]
-n4 = scene.objects["n4"]
-n5 = scene.objects["n5"]
-n6 = scene.objects["n6"]
-n7 = scene.objects["n7"]
-n8 = scene.objects["n8"]
-n9 = scene.objects["n9"]
-n10 = scene.objects["n10"]
+print(newX)
 
-luz = scene.objects["luz"]
-luz2 = scene.objects["luz2"]
-luz3 = scene.objects["luz3"]
-
-# Animamos objetos
-n1.localPosition.z = gl.n1
-n2.localPosition.z = gl.n2
-n3.localPosition.z = gl.n3
-n4.localPosition.z = gl.n4
-n5.localPosition.z = gl.n5
-n6.localPosition.z = gl.n6
-n7.localPosition.z = gl.n7
-n8.localPosition.z = gl.n8
-n9.localPosition.z = gl.n9
-n10.localPosition.z = gl.n10
-
-#gl.z = gl.z*20
-
-#t7.localPosition.z = gl.z
-#t6.localPosition.z = gl.z*2
-#t5.localPosition.z = gl.z*3
-#t4.localPosition.z = gl.z*5
-#t3.localPosition.z = gl.z*8
-#t2.localPosition.z = gl.z*13
-#t1.localPosition.z = gl.z*21
-
-#cam.localPosition.x = gl.camx
-#cam.localPosition.y = gl.camy
-#cam.localPosition.z = gl.camz
-
-#cam_posx = cam.localPosition.x
-#cam_posy = cam.localPosition.y
-#cam_posz = cam.localPosition.z
-
-#cam.localPosition = [+gl.camx, +gl.camy, +gl.camz]
-#cam_noise_empty.localPosition = [gl.cam_noise, gl.cam_noise, gl.cam_noise]
-
-#for x in scene.objects:
-#    print(x)
-
-#t7.color = [gl.z, 0.0, 0.0, 1.0]
-#t6.color = [gl.z, gl.z, 0.0, 1.0]
-#t5.color = [gl.z, gl.z, gl.z, 1.0]
-#t4.color = [0.0, gl.z, 0.0, 1.0]
-#t3.color = [0.0, gl.z, gl.z, 1.0]
-#t2.color = [gl.z, 0.0, gl.z, 1.0]
-#t2.color = [0.0, 0.0, gl.z, 1.0]
+owner.localPosition = [newX, newY, newZ]
 
 
 # Send
-res = 30*random.random() - 15  # from 15 to 15gl.my_sender.simple_send_to("/blender/x", res, (gl.ip_out, gl.port_out))
+#res = 30*random.random() - 15  # from 15 to 15gl.my_sender.simple_send_to("/blender/x", res, (gl.ip_out, gl.port_out))
